@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-brand: #87c232;
+  --color-brand-dark: #618930;
+  --color-brand-muted: #eef8e0;
+  --color-surface: #0f1419;
+  --color-surface-elevated: #1a222d;
+  --color-surface-soft: #f4f6f8;
+  --font-sans: 'Manrope', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-slate-800 antialiased;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-brand) 35%, white);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-panel {
+    @apply border border-white/15 bg-white/10 backdrop-blur-xl;
+  }
+}
